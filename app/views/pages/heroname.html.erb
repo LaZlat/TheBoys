@@ -1,0 +1,13 @@
+<section class="py-5 bg-image-full" style="background-image: url('assets/heroname.jpg'); height: 70vh">
+
+<div class="jumbotron text-center">
+<h1>Greetings <%= @the_hero %> !<h1>
+<p class="lead">We are really glad, that hero with such a faboulous name is joining us.</p>
+
+<%= button_to "Yes!", home_path, method: :get, form_class: "btn btn-dark" %>
+<%= button_to "No no no, rewind time...", heroname_path, method: :get, form_class: "btn btn-dark" %>
+<br>
+<!--<'istrint'%= image_tag("tb.PNG", :alt => "the boys") %> -->
+</div>
+
+</section>

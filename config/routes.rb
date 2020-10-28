@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'about' => 'pages#about'
+  get 'heroname' => 'pages#heroname'
+  get 'home' => 'home#index'
   root 'home#index'
 end
