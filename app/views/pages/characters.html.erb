@@ -1,34 +1,40 @@
-<h2 class="title">The Boys</h2>
-<div class="content-wrapper flex-center">
-    <% chars.each do |c| %>
-    <div class="character-wrapper flex-center">
-        <div class="character-item flex-center">
-            <img src=<%= c.image %> alt="">
-            <div class="character-name-container flex-center">
-                <p><%= c.name %></p>
+
+<div class="black-background">
+    <h2 class="title">The Boys</h2>
+    <div class="content-wrapper flex-center">
+        <% chars.each do |c| %>
+        <div class="character-wrapper flex-center">
+            <div class="character-item flex-center">
+                <img src=<%= c.image %> alt="">
+                <div class="character-name-container flex-center">
+                    <p><%= c.name %></p>
+                </div>
+            </div>
+            <div class="character-item flex-center">
+                <p class="description"><%= c.description %></p>
             </div>
         </div>
-        <div class="character-item flex-center">
-            <p class="description"><%= c.description %></p>
-        </div>
+        <% end %>
     </div>
-    <% end %>
 </div>
 
-<h2 class="title">The Seven</h2>
 
-<div class="content-wrapper flex-center">
-    <% the_seven.each do |c| %>
-    <div class="character-wrapper flex-center">
-        <div class="character-item flex-center">
-            <img src=<%= c.image %> alt="">
-            <div class="character-name-container flex-center">
-                <p><%= c.name %></p>
+<div class="black-background">
+    <h2 class="title">The Seven</h2>
+
+    <div class="content-wrapper flex-center">
+        <% the_seven.each do |c| %>
+        <div class="character-wrapper flex-center">
+            <div class="character-item flex-center">
+                <img src=<%= c.image %> alt="">
+                <div class="character-name-container flex-center">
+                    <p><%= c.name %></p>
+                </div>
+            </div>
+            <div class="character-item flex-center">
+                <p class="description"><%= c.description %></p>
             </div>
         </div>
-        <div class="character-item flex-center">
-            <p class="description"><%= c.description %></p>
-        </div>
+        <% end %>
     </div>
-    <% end %>
 </div>

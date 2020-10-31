@@ -30,7 +30,7 @@ class PagesController < ApplicationController
     ))
     chars.push(Character.new(
       'https://sciencefiction.com/wp-content/uploads/2020/07/Mothers_Milk-750x422.jpg',
-      'Mothers Milk',
+      'Mother\'s Milk',
       'Marvin T. "Mother\'s" Milk, or M.M., is one of the main characters in the Amazon series The Boys and an original member of black ops group The Boys.'
     ))
     chars.push(Character.new(

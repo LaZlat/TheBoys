@@ -1,13 +1,19 @@
-body{
-    background: #e6e4e2;
+body {
+    background: #242424;
+}
+
+.black-background {
+    background: var(--dark-color);
+    margin: 1%;
+    padding-bottom: 1%;
 }
 
 .title {
-  margin: 0 2%;
-  padding: 1rem 0;
-  color: black;
-//   text-align: center;
-  font-weight: bold;
+    margin: 0 1%;
+    padding: 1rem 0;
+    color: white;
+    // text-decoration: underline;
+    font-weight: bold;
 }
 
 .flex-center {
@@ -23,7 +29,7 @@ body{
 }
 
 .character-wrapper {
-    width: 30%;
+    width: 32%;
     margin: 0.5%;
     flex-direction: column;
 }
@@ -43,7 +49,7 @@ body{
 }
 
 .character-item {
-    background: var(--dark-color);
+    background: white;
     flex: 1;
     position: relative;
 }
@@ -51,11 +57,12 @@ body{
 .character-item .description {
     flex: 1;
     font-weight: bold;
+    
     padding: 5%;
     display: flex;
     align-items: center;
     text-align: center;
-    color: white;
+
 }
 
 .character-item img {
