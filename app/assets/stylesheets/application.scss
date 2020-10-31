@@ -15,5 +15,14 @@
 @import "bootstrap";
 
 :root {
-    --dark-color: #242424;
-  }
+    --dark-color: #121212;
+}
+
+.bg-dark {
+    background: var(--dark-color) !important;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
