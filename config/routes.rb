@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get 'home' => 'home#index'
   get 'vought' => 'pages#vought'
   get 'characters' => 'pages#characters'
+  get 'about' => 'pages#about'
   root 'home#index'
 end
