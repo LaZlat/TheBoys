@@ -1,9 +1,24 @@
-body {
-    background: white;
+#vought-content {
+    margin: 2rem 0;
+
+}
+.section-wrapper {
+    margin: 1rem;
+    padding: 1rem;
+    background: black;
+    color: white;
+    display: flex;
 }
 
-.yo-nigga {
-    background: red;
-    color: white;
-    font-size: 20px;
+.item {
+    flex: 1;
+}
+
+.item h3 {
+    margin-left: 0.5rem;
+}
+
+.floater {
+    float: left;
+    margin: 0.5rem;
 }
