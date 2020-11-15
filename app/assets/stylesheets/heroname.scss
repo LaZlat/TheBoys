@@ -1,7 +1,32 @@
+
 .jumbotron {
     height: auto;
+    margin: 0 5rem;
+    background: rgba($color: #ffffff, $alpha: 0.8)
 }
 
 .yes-yes + footer {
     position: fixed;
+}
+
+.spaceit {
+    margin-top: 3rem;
+}
+
+.allthecomms {
+    background-color: white;
+}
+
+section {
+    background: #242424;
+}
+
+.newname {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.field_box {
+    border: none;
+    width: auto;
 }

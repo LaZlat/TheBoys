@@ -1,5 +1,11 @@
 class PagesController < ApplicationController
-  before_action :generate_heroname
+  before_action :start
+  protect_from_forgery with: :null_session
+
+  def start
+    generate_heroname()
+    get_comments()
+  end
 
   def generate_heroname
     hero_array = ["The Whispering Lion",
@@ -84,6 +90,50 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html { render :characters, locals: { chars: chars, the_seven: the_seven } }
     end
+  end
+
+  def add_comment
+    required = [:username, :comment]
+    form_complete = true
+    required.each do |f|
+      if params.has_key? f and not params[f].blank?
+        #OK
+      else
+        form_complete = false
+      end
+    end
+
+    comm = Comm.new(username: params[:username], comment: params[:comment])
+
+    if comm.valid?
+      comm.save()
+    end
+    
+    render :heroname
+  end
+
+  def get_comments
+    @comms = Comm.all
+  end
+
+  def add_hero_name
+    required = [:name]
+
+    identity = Secretidentity.new(name: params[:name])
+    identity.save()
+
+    render :heroname
+  end
+
+  def deletecomment
+    if params[:del_btn]
+      Comm.where(comment: params[:co]).destroy
+    elsif params[:edit_btn]
+      m = Comm.where(comment: params[:co])
+      m.update_all( :comment => params[:comment] )
+    end
+
+    render :heroname
   end
   
 end

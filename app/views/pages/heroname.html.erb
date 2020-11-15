@@ -1,13 +1,54 @@
-<section class="py-5 bg-image-full yes-yes" style="background-image: url('assets/heroname.jpg'); height: 90vh; display: flex; align-items: center;">
+<section class="py-5 bg-image-full yes-yes">
 
-<div class="jumbotron text-center no-no" style="width: 100%;">
-<h1 class="no-no">Greetings <%= @the_hero %> !<h1>
-<p class="lead">We are really glad, that hero with such a faboulous name is joining us.</p>
+    <div class="jumbotron text-center no-no">
+        <div>
+            <h1 class="no-no">Greetings <%= @the_hero %> !<h1>
+                    <p class="lead">We are really glad, that hero with such a faboulous name is joining us.</p>
 
-<%= button_to "Yes!", home_path, method: :get, form_class: "btn btn-dark" %>
-<%= button_to "No no no, rewind time...", heroname_path, method: :get, form_class: "btn btn-dark" %>
-<br>
-<!--<'istrint'%= image_tag("tb.PNG", :alt => "the boys") %> -->
-</div>
+                    <%= button_to "No no no, rewind time...", heroname_path, method: :get, form_class: "btn btn-dark" %>
+                    <br>
+                    <div class="newname">
+                    <%= form_with url: addheroname_path, local: true, method: :post do %>
+                        <%= label_tag "Add a new hero name to our list:" %>
+                        <%= text_field_tag "name", nil %>
+                        <%= submit_tag "+" %>
+                    <% end %>
+                    </div>
+
+
+        </div>
+        <hr>
+        <div class="text-left spaceit">
+            <h4>Comments</h4>
+            <div class="allthecomms">
+                <% @comms.each do |c| %>
+                <%= form_with url: deletecomment_path, local: true, method: :post do %>
+                <b><%= label_tag c.username + ":"%></b>
+                <%= text_field_tag "comment", c.comment, class: 'field_box' %>
+                <%= hidden_field_tag "co", c.comment %>
+                <%= hidden_field_tag "us", c.username %>
+                <button type="submit" name="del_btn" class="btn btn-link" style="display: inline">delete</button>
+                <button type="submit" name="edit_btn" class="btn btn-link" style="display: inline">edit</button>
+                <% end %>
+                <% end %>
+            </div>
+            <hr>
+            <%= form_with url: addComment_path, local: true, method: :post do %>
+            <div>
+                <%= label_tag "username" %>
+                <br>
+                <%= text_field_tag "username", @usern %>
+            </div>
+            <div>
+                <%= label_tag "comment" %>
+                <br>
+                <%= text_area_tag "comment", @comme %>
+            </div>
+            <%= submit_tag "Submit" %>
+
+            <% end %>
+        </div>
+    </div>
+
 
 </section>
