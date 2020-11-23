@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'characters' => 'pages#characters'
   get 'about' => 'pages#about'
   post 'addComment', action: :add_comment, controller: :pages
-  post  'addheroname', action: :add_hero_name, controller: :pages
+  post 'addheroname', action: :add_hero_name, controller: :pages
+  post 'checkheroname', action: :check_hero_name, controller: :pages
   post 'deletecomment', acton: :delete_comment, controller: :pages
   root 'home#index'
 end

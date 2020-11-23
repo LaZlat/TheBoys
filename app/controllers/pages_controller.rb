@@ -125,6 +125,19 @@ class PagesController < ApplicationController
     render :heroname
   end
 
+  def check_hero_name
+    required = [:name]
+
+    identity = Secretidentity.where(name: params[:name]).count
+    if(identity != 0)
+      @searchMsg = "Horray! Hero by the name " + params[:name] + " does exist in our database!"
+    else
+      @searchMsg = "Ooops! Hero by the name " + params[:name] + " does not exist in our database!"
+    end
+
+    render :heroname
+  end
+
   def deletecomment
     if params[:del_btn]
       Comm.where(comment: params[:co]).destroy

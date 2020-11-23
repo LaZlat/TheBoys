@@ -14,6 +14,15 @@
                         <%= submit_tag "+" %>
                     <% end %>
                     </div>
+                    <div class="newname">
+                    <%= form_with url: checkheroname_path, local: true, method: :post do %>
+                        <%= label_tag "Search for a Hero name:" %>
+                        <%= text_field_tag "name", nil %>
+                        <%= submit_tag "Search" %>
+                        <br>
+                        <b><%= label_tag @searchMsg %></b>
+                    <% end %>
+                    </div>
 
 
         </div>
