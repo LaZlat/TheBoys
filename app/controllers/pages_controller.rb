@@ -135,7 +135,7 @@ class PagesController < ApplicationController
       @searchMsg = "Ooops! Hero by the name " + params[:name] + " does not exist in our database!"
     end
 
-    render :heroname
+    render :search
   end
 
   def deletecomment

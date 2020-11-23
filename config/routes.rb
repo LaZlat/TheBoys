@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'vought' => 'pages#vought'
   get 'characters' => 'pages#characters'
   get 'about' => 'pages#about'
+  get 'search' => 'pages#search'
   post 'addComment', action: :add_comment, controller: :pages
   post 'addheroname', action: :add_hero_name, controller: :pages
   post 'checkheroname', action: :check_hero_name, controller: :pages
