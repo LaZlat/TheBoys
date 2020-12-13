@@ -38,12 +38,16 @@
 
 <div class="jumbotron text-center no-no">
     <div class="newname">
-    <%= form_with url: checkheroname_path, local: true, method: :post do %>
-        <%= label_tag "Search for a Hero name:" %>
-        <%= text_field_tag "name", nil %>
-        <%= submit_tag "Search" %>
+    <% if @the_user == "Admin" %>
+        <h3> All the existing users </h3>
+        <% @users.each do |u| %>
+        <b><%= label_tag "Username: " + u.username %></b>
+        <%= label_tag " Password: " + u.password %>
         <br>
-        <b><%= label_tag @searchMsg %></b>
+        <% end %>
+    <% else %>
+        <h3> You are not an Admin </h3>
     <% end %>
+
     </div>
 </div>

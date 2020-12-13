@@ -1,10 +1,12 @@
 class PagesController < ApplicationController
   before_action :start
   protect_from_forgery with: :null_session
-
+  
   def start
     generate_heroname()
     get_comments()
+    get_users()
+    @the_user = cookies[:UserCookie]
   end
 
   def generate_heroname
@@ -148,5 +150,50 @@ class PagesController < ApplicationController
 
     render :heroname
   end
+
+  def login_user
+    if params[:asguest]
+      cookies[:UserCookie] = "Guest"
+      @the_user = cookies[:UserCookie]
+      render 'pages/index'
+    end
+    if params[:login]
+      found = User.where({username: params[:Username], password: params[:Password]}).count
+      if found > 0
+        cookies[:UserCookie] = params[:Username]
+        @the_user = cookies[:UserCookie]
+        render 'pages/index';
+      end
+    end
+    if params[:register]
+      redirect_to :register
+    end
+  end
+
+  def register_user
+    if params[:login]
+      redirect_to :login
+    end
+    if params[:register]
+      required = [:Username, :Password]
+      form_complete = true
+      required.each do |f|
+        if params.has_key? f and not params[f].blank?
+          #OK
+        else
+          form_complete = false
+        end
+      end
+      useris = User.new(username: params[:Username], password: params[:Password])
+      if useris.valid?
+        useris.save()
+      end
+      redirect_to :login
+    end
+  end
   
+  def get_users
+    @users = User.all
+  end
+
 end
