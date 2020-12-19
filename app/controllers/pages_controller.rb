@@ -1,12 +1,14 @@
 class PagesController < ApplicationController
   before_action :start
   protect_from_forgery with: :null_session
+  helper_method :delete_user
   
   def start
     generate_heroname()
     get_comments()
     get_users()
     @the_user = cookies[:UserCookie]
+    
   end
 
   def generate_heroname
@@ -88,6 +90,7 @@ class PagesController < ApplicationController
       'Stormfront',
       'Stormfront (formerly known as Liberty, real name Klara Risinger) is one of the main antagonists of the second season of the Amazon series The Boys. She is a superhero who replaces Translucent as a member of The Seven.',
     ))
+      # cia
 
     respond_to do |format|
       format.html { render :characters, locals: { chars: chars, the_seven: the_seven } }
@@ -95,6 +98,11 @@ class PagesController < ApplicationController
   end
 
   def add_comment
+
+    if (cookies[:UserCookie] == "")
+      return
+    end  
+
     required = [:username, :comment]
     form_complete = true
     required.each do |f|
@@ -105,13 +113,19 @@ class PagesController < ApplicationController
       end
     end
 
-    comm = Comm.new(username: params[:username], comment: params[:comment])
+    @usr = User.find( cookies[:userId] )
+    @usr.comms.create(username: @the_user,:comment=>params[:comment])
 
-    if comm.valid?
-      comm.save()
-    end
-    
     render :heroname
+  end
+
+  def delete_user
+    if (cookies[:UserCookie] == "")
+      return
+    end 
+    @usr = User.find( cookies[:userId] )
+    @usr.destroy
+    cookies[:UserCookie] = ""
   end
 
   def get_comments
@@ -158,10 +172,11 @@ class PagesController < ApplicationController
       render 'pages/index'
     end
     if params[:login]
-      found = User.where({username: params[:Username], password: params[:Password]}).count
-      if found > 0
+      found = User.where({username: params[:Username], password: params[:Password]})
+      if found.count > 0
         cookies[:UserCookie] = params[:Username]
         @the_user = cookies[:UserCookie]
+        
         render 'pages/index';
       end
     end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'search' => 'pages#search'
   get 'login' => 'pages#login'
   get 'register' => 'pages#register'
+  get 'settings' => 'pages#settings'
   get 'admin' => 'pages#admin'
   post 'addComment', action: :add_comment, controller: :pages
   post 'addheroname', action: :add_hero_name, controller: :pages

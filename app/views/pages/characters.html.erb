@@ -31,6 +31,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="admin">Admin panel</a>
             </li>
+            <% if @the_user != "Guest" %>
+            <li class="nav-item">
+                <a class="nav-link" href="settings">Settings</a>
+            </li>
+            <% end %>
         </ul>
     </div>
 
@@ -56,6 +61,7 @@
 </div>
 
 
+
 <div class="black-background">
     <h2 class="title">The Seven</h2>
 
@@ -74,4 +80,13 @@
         </div>
         <% end %>
     </div>
+</div>
+
+<div style="display: flex; background: white; flex-direction: column; padding: 4rem; width: 98%; margin: 0 auto;">
+    <h1>Add Character</h1>
+    <label for="">Character name</label>
+    <input id="name" type="text">
+    <label for="">Description:</label>
+    <textarea name="char-description; width: 90%;" id="description"></textarea>
+    <button style="width: 3rem; margin-top: 1rem;">Add</button>
 </div>

@@ -1,5 +1,5 @@
 class Character
-
+    # include Mongoid::Document
     attr_reader :image, :name, :description
 
     def initialize(image, name, description)
