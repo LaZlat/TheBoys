@@ -172,7 +172,7 @@ class PagesController < ApplicationController
       if found.count.positive?
         cookies[:UserCookie] = params[:Username]
         @the_user = cookies[:UserCookie]
-        
+
         user_ids = User.where(username: params[:Username]).pluck(:id)
 
         cookies[:userId] = user_ids[0]
