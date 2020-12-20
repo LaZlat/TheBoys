@@ -41,5 +41,7 @@
 <div style="min-height: 90vh; background: tomato; color: white; text-align: center; display: flex; align-items: center; flex-direction: column; justify-content: center;">
         <h1>Delete account</h1>
         <p>If you want to delete your account press the delete button bellow<br> All your comments will be deleted too</p>
-        <button style="background: red; color: white; border: none; padding: 1rem; border-radius: 5px;" onclick="<% delete_user %>">Delete</button>
+        <%= form_with url: delete_user_path, local: true, method: :post do %>
+        <button type="submit" style="background: red; color: white; border: none; padding: 1rem; border-radius: 5px;">Delete</button>
+        <% end %>
 </div>

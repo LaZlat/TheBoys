@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'settings' => 'pages#settings'
   get 'admin' => 'pages#admin'
   post 'addComment', action: :add_comment, controller: :pages
+  post 'delete_user', action: :delete_user, controller: :pages
   post 'addheroname', action: :add_hero_name, controller: :pages
   post 'checkheroname', action: :check_hero_name, controller: :pages
   post 'deletecomment', acton: :delete_comment, controller: :pages

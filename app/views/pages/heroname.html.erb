@@ -83,11 +83,6 @@
       <hr>
       <% if @the_user != "Guest" %>
         <%= form_with url: addComment_path, local: true, method: :post do %>
-        <!-- <div>
-          <%= label_tag "username" %>
-          <br>
-          <%= text_field_tag "username", @usern %>
-        </div> -->
         <div>
           <%= label_tag "comment" %>
           <br>
