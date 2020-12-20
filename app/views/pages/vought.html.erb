@@ -1,16 +1,58 @@
+<!-- Bootstrap nav-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <a class="navbar-brand" href="#">The Boys. Welcome <%= @the_user %>, glad you are here!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="characters">Characters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="vought">Vought</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="heroname">Generate hero name</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="search">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin">Admin panel</a>
+            </li>
+            <% if @the_user != "Guest" %>
+            <li class="nav-item">
+                <a class="nav-link" href="settings">Settings</a>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+
+</nav>
+
 <div id="vought-content">
     <div class="section-wrapper">
         <div class="item">
             <h3>Vought International</h3>
             <img class="floater" src="https://static.wikia.nocookie.net/amazons-the-boys/images/6/66/Vought_international.jpg" alt="">
-            <p>Vought was founded by Frederick Vought, a Nazi scientist who Hitler himself appointed as the chief physician at Dachau in 1939 where Vought would perform unethical experimentation on human test subjects in order to develop Compound V to enhance human beings into what are now known as Supes. Vought eventualy created the first dose of Compound V and had his first successful Superhero, his own wife, Stormfront. When Vought realized the Nazi party's defeat was certain, Vought defected from Nazi Germany and the Allied forces smuggled him to the US and allowed him to give his newly developed Compound V to military soldiers to increase their odds against the Nazi Party. This prompted President Franklin Roosevelt to pardon him in 1944, and allow him to continue his research on Compound V and create more Supes, and gave him his own corporation to further the development of the Supes as an advanced race of living weapons. At some point after Vought died Stan Edgar would take over as CEO and (perhaps like his predecessor) would cover up any casualties caused by the Supes. Compound V is shrouded from the public, however, whom are led to believe that Supes are born genetically advanced and chosen by God. Instead, Compound V was shipped across the US to hospitals by Samaritan's Embrace under the guise of medical supplies. At the end of Season One, however, Hughie Campbell was able to stop the Compound V shipments by threatening to release damaging information to the public about Ezekiel.</p>    
+            <p>Vought was founded by Frederick Vought, a Nazi scientist who Hitler himself appointed as the chief physician at Dachau in 1939 where Vought would perform unethical experimentation on human test subjects in order to develop Compound V to enhance human beings into what are now known as Supes. Vought eventualy created the first dose of Compound V and had his first successful Superhero, his own wife, Stormfront. When Vought realized the Nazi party's defeat was certain, Vought defected from Nazi Germany and the Allied forces smuggled him to the US and allowed him to give his newly developed Compound V to military soldiers to increase their odds against the Nazi Party. This prompted President Franklin Roosevelt to pardon him in 1944, and allow him to continue his research on Compound V and create more Supes, and gave him his own corporation to further the development of the Supes as an advanced race of living weapons. At some point after Vought died Stan Edgar would take over as CEO and (perhaps like his predecessor) would cover up any casualties caused by the Supes. Compound V is shrouded from the public, however, whom are led to believe that Supes are born genetically advanced and chosen by God. Instead, Compound V was shipped across the US to hospitals by Samaritan's Embrace under the guise of medical supplies. At the end of Season One, however, Hughie Campbell was able to stop the Compound V shipments by threatening to release damaging information to the public about Ezekiel.</p>
         </div>
         <div class="item">
             <div style="margin-top: 3rem;">
                 <img class="floater" src="https://static.tvmaze.com/uploads/images/medium_portrait/206/517297.jpg" alt="">
                 <p class="char-name"><b>Stan Edgar</b> is the overarching antagonist of the Amazon series The Boys. He is the CEO of Vought International and Madelyn Stillwell's superior. He is also responsible for Compound V turning people into superhuman beings. After Stillwell's death, Edgar decides to take a more direct approach in managing Vought and its assets such as The Seven. After Madelyn Stillwell's demise, Stan decides to step into the limelight and becomes more directly involved in Vought International and it's assets. He continues the push for incorporating Supes in the military, holding a meeting with U.S. Secretary of Defense, Robert Singer, where Stan discusses chain of command, secret designations for Compound V and logistics for collateral damage. Sometime after Translucent's funeral, Stan hires Stormfront as Homelander's replacement in The Seven behind Homelander's back. Homelander confronts Stan about hiring Stormfront without consulting with him. When Homelander claims himself at Vought's most valuable asset and threatens to leave the company when his contract expires, Edgar proceeds to give a brief history of Vought's founder, Frederick Vought. Stan explains that Homelander is under the impression that they are a superhero company when in fact they are a pharmaceutical company and Homelander is not their most valuable asset, but Compound V is. He accuses him of distributing Compound V around the world to terrorists and says that Homelander is not as significant as he thinks he is.</p>
             </div>
-            
+
         </div>
-        </div>
+    </div>
 </div>

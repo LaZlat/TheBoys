@@ -1,0 +1,23 @@
+<div class="lab">
+<h1>Welcome! Login into the fan page</h1>
+<br>
+    <%= form_with url: loginuser_path, local: true, method: :post do %>
+    <%= label_tag "Username:" %>
+    <br>
+    <%= text_field_tag "Username", nil %>
+    <br>
+    <%= label_tag "Password:" %>
+    <br>
+    <%= password_field_tag "Password", nil %>
+    <br>
+    <br>
+
+    <%= submit_tag "Login", name: "login" %>
+    <br>
+    <br>
+    <%= submit_tag "Enter as guest", name: "asguest" %>
+    <%= submit_tag "Register new user", name: "register" %>
+    <% end %>
+
+
+</div>

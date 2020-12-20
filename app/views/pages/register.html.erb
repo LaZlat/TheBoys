@@ -1,0 +1,22 @@
+<div class="lab">
+<h1>Register new user</h1>
+<br>
+    <%= form_with url: registeruser_path, local: true, method: :post do %>
+    <%= label_tag "Username:" %>
+    <br>
+    <%= text_field_tag "Username", nil %>
+    <br>
+    <%= label_tag "Password:" %>
+    <br>
+    <%= password_field_tag "Password", nil %>
+    <br>
+    <%= label_tag "Repeat password:" %>
+    <br>
+    <%= password_field_tag "Repeat", nil %>
+    <br>
+    <br>
+
+    <%= submit_tag "Register", name: "register" %>
+    <%= submit_tag "Back to Login", name: "login" %>
+    <% end %>
+</div>
