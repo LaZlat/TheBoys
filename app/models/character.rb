@@ -1,10 +1,13 @@
-class Character
-    # include Mongoid::Document
-    attr_reader :image, :name, :description
+# frozen_string_literal: true
 
-    def initialize(image, name, description)
-        @image = image
-        @name = name
-        @description = description
-    end
+# Character class
+class Character
+  # include Mongoid::Document
+  attr_reader :image, :name, :description
+
+  def initialize(image, name, description)
+    @image = image
+    @name = name
+    @description = description
+  end
 end
