@@ -171,12 +171,18 @@ class PagesController < ApplicationController
       @the_user = cookies[:UserCookie]
       render 'pages/index'
     end
+
     if params[:login]
       found = User.where({username: params[:Username], password: params[:Password]})
       if found.count > 0
         cookies[:UserCookie] = params[:Username]
         @the_user = cookies[:UserCookie]
         
+        print('cia nx')
+        user_ids = User.where(username: params[:Username]).pluck(:id)
+        print(user_ids[0], "<-----")
+        print(found, "<-----")
+        cookies[:userId] = user_ids[0]
         render 'pages/index';
       end
     end
