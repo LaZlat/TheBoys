@@ -172,13 +172,12 @@ class PagesController < ApplicationController
       if found.count.positive?
         cookies[:UserCookie] = params[:Username]
         @the_user = cookies[:UserCookie]
-        
-        print('cia nx')
+
         user_ids = User.where(username: params[:Username]).pluck(:id)
-        print(user_ids[0], "<-----")
-        print(found, "<-----")
+        print(user_ids[0], '<-----')
+        print(found, '<-----')
         cookies[:userId] = user_ids[0]
-        render 'pages/index';
+        render 'pages/index'
       end
     end
     redirect_to :register if params[:register]
