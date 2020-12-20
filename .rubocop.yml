@@ -1,0 +1,17 @@
+Layout/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 200
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
